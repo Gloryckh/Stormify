@@ -1,0 +1,3 @@
+#gitignore file for stormily.  Ignores the bin directory
+
+./bin
