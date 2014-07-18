@@ -23,16 +23,16 @@ public class MainActivity extends Activity implements OnClickListener {
 	MediaPlayer player;
 	CircularSeekBar seekbar;
 	
-	// For the menu
+	// Initializing a sliding menu
 	SlidingMenu menu;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//setting content view (layout)
+		//setting the layout
 		setContentView(R.layout.activity_main);
 		
-		// configure the SlidingMenu
+		// configuring the SlidingMenu
 		menu = new SlidingMenu(this);
         menu.setMode(SlidingMenu.LEFT);
         menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
@@ -45,7 +45,8 @@ public class MainActivity extends Activity implements OnClickListener {
         
         buttonOnClicks(menu);
        
-		//creating random number generator
+		//creating a random number generator
+		//so the system will randomly pick a song to play
 		Random randomNumber = new Random();
 		
 		// creating an integer between 0 and 3
@@ -156,9 +157,8 @@ public void tapListeners(){
     }
     
 
-	/**
-	 * If back button is pressed, then stop the current track.
-	 */
+	//If back button is pressed, then stop the current track.
+	 
 
 	@Override
 	public void onBackPressed() {
@@ -171,6 +171,9 @@ public void tapListeners(){
         player.release();
 		}
 	}
+
+	//Setting onClick methods for buttons 
+	//in the sliding menu
 
 	@Override
 	public void onClick(View v) {
