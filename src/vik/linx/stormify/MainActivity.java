@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -33,7 +32,7 @@ public class MainActivity extends Activity {
 
 		// Set the adapter for the list view
 		menuListView.setAdapter(new ArrayAdapter<>(this,
-				android.R.layout.simple_list_item_1, slideMenuContent));
+				R.layout.listitem, slideMenuContent));
 
 		// Set the list's click listener
 		menuListView.setOnItemClickListener(new DrawerItemClickListener());
@@ -48,27 +47,6 @@ public class MainActivity extends Activity {
 		player = MediaPlayer.create(getApplicationContext(), trackID);
 		player.start();
 		player.setLooping(true);
-	}
-
-	@Override
-	public void onPause() {
-		super.onPause();
-		if (player != null && player.isPlaying()) {
-			player.pause();
-		}
-	}
-
-	@Override
-	public void onResume() {
-		super.onResume();
-		if (player != null && !player.isPlaying()) {
-			player.start();
-		}
-
-		if (player == null) {
-			player = new MediaPlayer();
-			startTrack(player, R.raw.birdsong);
-		}
 	}
 
 	private int randomTrack() {
