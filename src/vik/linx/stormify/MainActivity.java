@@ -49,28 +49,29 @@ public class MainActivity extends Activity {
 		player.setLooping(true);
 	}
 
+
+	/**
+	 * Randomly chooses a track to start playing.
+	 * @return
+	 */
 	private int randomTrack() {
-		//creating random number generator
 		Random randomNumber = new Random();
 
-		// creating an integer between 0 and 3
 		int number = randomNumber.nextInt(4);
 
 		switch (number) {
-			case 1: // if number = 0
+			case 1:
 				return R.raw.summer;
-			case 2: // if number = 1
+			case 2:
 				return R.raw.singapore;
-			case 3: //if number = 2
+			case 3:
 				return R.raw.birdsong;
-			case 4: // if number = 3
+			case 4:
 				return R.raw.simplerain;
 			default:
 				return R.raw.summer;
 		}
 	}
-
-
 
 	private class DrawerItemClickListener implements ListView.OnItemClickListener {
 		@Override
@@ -79,9 +80,8 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	/** Swaps fragments in the main content view */
+	/** Does different behavior based on menu item clicked */
 	private void selectItem(int position) {
-		// Create a new fragment and specify the planet to show based on position
 		switch (position) {
 			case 0:
 				//About
