@@ -11,6 +11,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 public class MainActivity extends Activity {
@@ -25,6 +26,8 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		Button openMenuBtn = (Button) findViewById(R.id.open_menu_btn);
 		
 		// configure the SlidingMenu
 		menuLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -37,9 +40,25 @@ public class MainActivity extends Activity {
 		// Set the list's click listener
 		menuListView.setOnItemClickListener(new DrawerItemClickListener());
 
+		setOnClick(openMenuBtn);
+
 		int track = randomTrack();
 
 		startTrack(player, track);
+	}
+
+	private void setOnClick(Button button) {
+		button.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (menuLayout.isDrawerOpen(menuListView)) {
+					menuLayout.closeDrawer(menuListView);
+				} else {
+					menuLayout.openDrawer(menuListView);
+					
+				}
+			}
+		});
 	}
 
 
