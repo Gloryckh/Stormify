@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
 
 	MediaPlayer player = null;
 
-	private String[] slideMenuContent = {"About", "Exit"};
+	private String[] slideMenuContent = {"About", "New Track"};
 	private ListView menuListView;
 	private DrawerLayout menuLayout;
 	
@@ -69,7 +69,7 @@ public class MainActivity extends Activity {
 		int track = randomTrack();
 
 
-		startTrack(player, track);
+		startTrack(track);
 
 
 		//set a countdown until we stop
@@ -106,7 +106,7 @@ public class MainActivity extends Activity {
 	}
 
 
-	private void startTrack(MediaPlayer player, int trackID) {
+	private void startTrack(int trackID) {
 		player = MediaPlayer.create(getApplicationContext(), trackID);
 		player.start();
 		player.setLooping(true);
@@ -149,6 +149,7 @@ public class MainActivity extends Activity {
 			player.pause();
 			player.stop();
 			player.release();
+			finish();
 		}
 	}
 
@@ -169,8 +170,8 @@ public class MainActivity extends Activity {
 				builder.create().show();
 				break;
 			case 1:
-				//Exit
-				finish();
+				//picking new track
+				onBackPressed();
 				break;
 			default:
 				break;
