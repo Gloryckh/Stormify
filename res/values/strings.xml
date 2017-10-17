@@ -6,5 +6,14 @@
     <string name="hello_world">Hello world!</string>
     <string name="volume">Volume</string>
     <string name="name">Developed By Vik Yabannavar</string>
+    <string name="how_long">How long will your Storm last?</string>
+    <string name="minutes"> Minutes</string>
+    <string name="cont">Continue</string>
+    <string name="cant_stop">Nothing to pause</string>
+    <string name="min_left"> Minutes Left</string>
+    <string name="title">About</string>
+    <string name="message">App developed by Vik Yabannavar. All sounds licensed under Creative Commons.</string>
+    <string name="ok">OK</string>
+    <string name="logo_desc">The stormify logo, which is in the shape of a thunderbolt.</string>
 
 </resources>

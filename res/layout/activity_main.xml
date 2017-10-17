@@ -8,30 +8,32 @@
 		android:id="@+id/content_frame"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
+		android:orientation="vertical"
 		android:background="@drawable/gradient">
-		<LinearLayout
+
+		<Button
+			android:id="@+id/open_menu_btn"
+			android:layout_width="30dp"
+			android:layout_height="30dp"
+			android:layout_margin="10dp"
+			android:background="@drawable/menuicon"/>
+
+		<ImageView
+			android:id="@+id/logo_img_view"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_gravity="start|top">
-			<Button
-				android:id="@+id/open_menu_btn"
-				android:layout_width="30dp"
-				android:layout_height="30dp"
-				android:layout_margin="10dp"
-				android:background="@drawable/menuicon"/>
-		</LinearLayout>
+			android:src="@drawable/graylogo"
+			android:layout_gravity="center|center_horizontal|center_vertical"
+			android:contentDescription="@string/logo_desc"/>
 
-		<RelativeLayout
+		<TextView
 			android:layout_width="wrap_content"
-			android:layout_height="match_parent">
-			<ImageView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:src="@drawable/logo"
-				android:layout_centerHorizontal="true"/>
-		</RelativeLayout>
-
-
+			android:layout_height="wrap_content"
+			android:textColor="@color/white"
+			android:layout_gravity="center_horizontal"
+			android:textSize="20sp"
+			android:layout_marginTop="40dp"
+			android:id="@+id/time_remaining"/>
 
 	</FrameLayout>
 

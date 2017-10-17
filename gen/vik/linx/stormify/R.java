@@ -309,7 +309,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int menuimage=0x7f020002;
         public static final int profile=0x7f020003;
         public static final int shadow=0x7f020004;
-        public static final int test=0x7f020005;
+        public static final int food =0x7f020005;
         public static final int wall=0x7f020006;
     }
     public static final class id {
